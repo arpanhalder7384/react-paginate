@@ -132,7 +132,7 @@ export class App extends Component {
         <CommentList data={this.state.data} />
         {/* Here the pagination component is styled thanks to Bootstrap
         classes. See https://getbootstrap.com/docs/5.1/components/pagination */}
-        <nav aria-label="Page navigation comments" className="mt-4">
+        <nav >
           <ReactPaginate
             previousLabel="previous"
             nextLabel="next"
@@ -149,22 +149,10 @@ export class App extends Component {
             previousClassName="page-item"
             previousLinkClassName="page-link"
             nextClassName="page-item"
-            nextLinkClassName="page-link"
             activeClassName="active"
-            // eslint-disable-next-line no-unused-vars
-            hrefBuilder={(page, pageCount, selected) =>
-              page >= 1 && page <= pageCount ? `/page/${page}` : '#'
-            }
-            hrefAllControls
-            forcePage={currentPage}
-            onClick={(clickEvent) => {
-              console.log('onClick', clickEvent);
-              // Return false to prevent standard page change,
-              // return false; // --> Will do nothing.
-              // return a number to choose the next page,
-              // return 4; --> Will go to page 5 (index 4)
-              // return nothing (undefined) to let standard behavior take place.
-            }}
+            
+            // forcePage={currentPage}
+            
           />
         </nav>
       </div>
